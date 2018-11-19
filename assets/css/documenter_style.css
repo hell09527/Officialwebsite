@@ -10,7 +10,7 @@ html, body{max-width:100%;}
 body{ padding-bottom: 40px;}
 
 #documenter_content{
-	padding-top: 200px;
+	/*padding-top: 200px;*/
 }
 #documenter-cover{
 	min-height:600px;
@@ -48,6 +48,7 @@ footer{
 	text-indent:-9999px;
 	margin:0;
 	padding:0;
+	margin-left: 162px;
 }
 
 .page-header{
@@ -89,7 +90,7 @@ footer{
 	clear:both;
 }
 section{
-	margin-top:200px;
+	/*margin-top:200px;*/
 }
 img{
 	height:auto !important;
