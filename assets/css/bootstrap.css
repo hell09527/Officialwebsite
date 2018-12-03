@@ -1,4 +1,4 @@
-/*!
+/*/
  * Bootstrap v2.0.1
  *
  * Copyright 2012 Twitter, Inc
@@ -107,7 +107,7 @@ textarea {
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 18px;
   color: #333333;
   background-color: #ffffff;
@@ -259,7 +259,7 @@ a:hover {
   width: 99.99999998999999%;
 }
 .container {
-  width: 940px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   *zoom: 1;
@@ -384,6 +384,7 @@ ol {
 }
 li {
   line-height: 0px;
+  list-style: none;
   /*list-sytle-type:none !important;;*/
 }
 ul.unstyled, ol.unstyled {
@@ -2438,7 +2439,7 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .navbar {
   overflow: visible;
-  margin-bottom: 18px;
+  /*margin-bottom: 18px;*/
 z-index:10000 !important;
 
 }
@@ -2675,7 +2676,6 @@ margin-left:10px;
 .navbar .nav .active > a, .navbar .nav .active > a:hover {
   color: #ffffff;
   text-decoration: none;
-  background-color: #222222;
 }
 .navbar .divider-vertical {
   height: 40px;
