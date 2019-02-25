@@ -24,6 +24,7 @@
     <link href="https://images.ushopal.com/js/prettify.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/bootstrap-responsive.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/documenter_style.css" rel="stylesheet">
+    <link rel="icon" href="https://images.ushopal.com/OMS.png" type="image/x-icon" />
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -67,7 +68,7 @@
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#', endColorstr='#', GradientType=0);
             border-color: # # #bfbfbf;
             color:#;
-            
+
         }
         .btn-primary:hover,
         .btn-primary:active,
@@ -185,8 +186,11 @@
 
                     <li><a href="#banner_timer" title="Banner Timer">联 系 我 们 <div class="lines"></div></a></li>
 
-                    <li class="translate" onclick="window.location.href='official-website.html'"><a href="#"><span
-                            style="color:red;">CN </span>/ EN</a></li>
+                    <li class="translate" >
+                        <a href="#"><span   onclick="window.location.href=' official-website.html'" >EN
+                        </span> <span  style="color:red;" onclick="window.location.href='secondary.html'">/ CN</span> <span onclick="window.location.href='Japanese.html'">/日本語</span></a>
+                    </li>
+
                 </ul>
             </div>
 
@@ -202,7 +206,7 @@
     </div>
     <section id="how_to_start">
         <ul>
-            <li><img  id="myImage2"  src="https://images.ushopal.com/f446ea408ba985a465d63d6ef5ccbe00_1677173729.jpg" alt=""></li>
+            <li><img  id="myImage2"  src="https://images.ushopal.com/pp.jpg" alt=""></li>
             <li><img  id="myImage3" src="https://images.ushopal.com/6120657bc31e56e95ff8c6423a14847b_2007072661.jpg" alt=""></li>
             <li><img  id="myImage4" src="https://images.ushopal.com/da50c5e7386a133319676774d7b61283_122593346.jpg" alt=""></li>
             <li><img  id="myImage5" src="https://images.ushopal.com/4e269d8270633fae888ca8dc11e2a5c4_2000814972.jpg" alt=""></li>
@@ -241,6 +245,7 @@
     <section id="media_in_slide">
         <img id="wap3" src="https://images.ushopal.com/o4.jpg" alt="">
         <img  id="wap4"   src="" alt="">
+        <img  id="wap6"   src="https://images.ushopal.com/15-1.jpg" alt="">
     </section>
     <section id="banner_timer" class="input">
         <ul>
@@ -271,6 +276,7 @@
 </body>
 <script>
     $(function () {
+
         //    var _PageHeight = document.documentElement.clientHeight,
         //            _PageWidth = document.documentElement.clientWidth;
         //        var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,
@@ -300,7 +306,7 @@
                 console.log(window.screen.width);
 //            $('#myImage1').attr('src', 'img/f5/content_list.jpg')
                 document.getElementById("myImage1").src="https://images.ushopal.com/1.jpg";
-                document.getElementById("myImage2").src="https://images.ushopal.com/2.jpg";
+                document.getElementById("myImage2").src="https://images.ushopal.com/pp.jpg";
                 document.getElementById("myImage3").src="https://images.ushopal.com/3.jpg";
                 document.getElementById("myImage4").src="https://images.ushopal.com/4.jpg";
                 document.getElementById("myImage5").src="https://images.ushopal.com/5.jpg";
@@ -315,6 +321,8 @@
                 document.getElementById("wap3").src="https://images.ushopal.com/14.jpg";
                 document.getElementById("wap4").src="https://images.ushopal.com/15.jpg";
                 document.getElementById("wap5").src="https://images.ushopal.com/16.jpg";
+                document.getElementById("wap6").src="https://images.ushopal.com/p15-1.jpg";
+
                 $("#container").css("width",W)
                 $("#brand").css("margin-left",middle);
 

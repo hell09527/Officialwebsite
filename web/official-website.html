@@ -24,6 +24,7 @@
     <link href="https://images.ushopal.com/js/prettify.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/bootstrap-responsive.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/documenter_style.css" rel="stylesheet">
+    <link rel="icon" href="https://images.ushopal.com/OMS.png" type="image/x-icon" />
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -186,8 +187,12 @@
 
                     <li><a href="#banner_timer" title="Banner Timer">CONTACT US <div class="lines"></div></a></li>
 
-                    <li class="translate" onclick="window.location.href='secondary.html'"><a href="#"><span style="color:red;">EN
-                                </span> / CN</a></li>
+
+                    <li class="translate" >
+                        <a href="#"><span style="color:red;"  onclick="window.location.href=' official-website.html'" >EN
+                        </span> <span onclick="window.location.href='secondary.html'">/ CN</span> <span onclick="window.location.href='Japanese.html'">/日本語</span></a>
+                    </li>
+
                 </ul>
             </div>
 
@@ -214,7 +219,7 @@
         </ul>
     </section>
     <section id="options">
-        <img  id="myImage7"   src="https://images.ushopal.com/%E5%AE%98%E7%BD%91-Home%20Page-our%20work%20Copy%202%402x.png" alt="">
+        <img  id="myImage7"   src="https://images.ushopal.com/team.jpg" alt="">
         <img   id="myImage8"  src="" alt="">
         <img    id="myImage9"     src="" alt="">
     </section>
@@ -334,6 +339,28 @@
             }, 1000);
             return false;
         });
+
+
+
+        $.ajax({
+            type: "POST",
+            url: 'https://chen.b2c.omnixdb.com/graph/get_api_data',
+            data: {},
+            dataType: "json",
+            success: res => {
+                if(res.code == 0){
+                    console.log(res.data);
+
+                }else{
+                    console.log(res.msg);
+                }
+            },
+            error: function () {
+                console.log(res.msg);
+            }
+        });
+
+
     })
 
 
