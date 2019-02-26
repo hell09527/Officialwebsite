@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="https://images.ushopal.com/js/bootstrap.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/prettify.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.css" rel="stylesheet">-->
     <link href="https://images.ushopal.com/js/bootstrap-responsive.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/documenter_style.css" rel="stylesheet">
     <link rel="icon" href="https://images.ushopal.com/OMS.png" type="image/x-icon" />
@@ -200,6 +201,12 @@
         .nav>li:nth-child(6)>a:hover{
             color: #fff;
         }
+        .modal-content {
+        // 宽度自适应内容
+        width: fit-content;
+        // 流出间隙
+        padding: 0.2rem 0.4rem;
+        }
 
     </style>
 
@@ -296,7 +303,7 @@
         <ul>
             <img   id="wap5"   src="https://images.ushopal.com/Japanese_12.jpg" alt="">
             <!--action=""  method="post"-->
-            <form id="Form">
+            <form id="Form" style="margin:0;">
                 <select class="Choose" name="bazaar">
                     <option value=""></option>
                     <option value ="中国市場への参入・ブランド構築について">中国市場への参入・ブランド構築について</option>
@@ -404,6 +411,19 @@
         <p><span style="cursor:pointer"  class="certain">沪ICP备15003557号-2</span> &nbsp;&nbsp;&nbsp;Copyright © 2015-2018 <a href="#">ushopal.com</a>&nbsp;版权所有
         </p>
     </div>
+              <!--//提示框-->
+    <div class="modal fade bd-example-modal-sm"  id="myModal" role="dialog" data-backdrop="false"  aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="text-center mb-0">
+                    <i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+                    邮件发送成功
+                </p>
+            </div>
+        </div>
+    </div>
+
+
 
 
 </div><!-- /container -->
@@ -421,53 +441,13 @@
 <script src="https://images.ushopal.com/js/bootstrap-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
 <script src="https://images.ushopal.com/js/base64.js"></script>
+<!--<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>-->
+
+
 
 </body>
 <script>
     $(function () {
-
-//                 wap端修改
-//        if(window.screen.width<=600){
-//            var W=window.screen.width;
-//            var S=window.screen.width+'px';
-//            var  middle= Number((W-200)/2)+'px';
-////            大图区域
-//            console.log(window.screen.width);
-////            $('#myImage1').attr('src', 'img/f5/content_list.jpg')
-//            document.getElementById("myImage1").src="https://images.ushopal.com/p1u.jpg";
-//            document.getElementById("myImage2").src="https://images.ushopal.com/p2u.jpg";
-//            document.getElementById("myImage3").src="https://images.ushopal.com/p3u.jpg";
-//            document.getElementById("myImage4").src="https://images.ushopal.com/p4u.jpg";
-//            document.getElementById("myImage5").src="https://images.ushopal.com/p5u.jpg";
-//            document.getElementById("myImage6").src="https://images.ushopal.com/p6u.jpg";
-//            document.getElementById("myImage7").src="https://images.ushopal.com/p7u.jpg";
-//            document.getElementById("myImage8").src="https://images.ushopal.com/p8u.jpg";
-//            document.getElementById("myImage9").src="https://images.ushopal.com/p9u.jpg";
-//            document.getElementById("myImage10").src="https://images.ushopal.com/p10u.jpg";
-////            document.getElementById("myImage11").src="https://images.ushopal.com/q1.jpg";
-//            document.getElementById("wap1").src="https://images.ushopal.com/p12u.jpg";
-//            document.getElementById("wap2").src="https://images.ushopal.com/p13u.jpg";
-//            document.getElementById("wap3").src="https://images.ushopal.com/p14u.jpg";
-//            document.getElementById("wap4").src="https://images.ushopal.com/p15u.jpg";
-//            document.getElementById("wap5").src="https://images.ushopal.com/p16u.jpg";
-//            $("#container").css("width",W)
-//            $("#brand").css("margin-left",middle);
-//
-////            中间动图部分
-//            $('.gif').css('width', '50%');
-//            $('#moveImg1').attr('src', 'https://images.ushopal.com/1-1g.jpg')
-//            $('#moveImg2').attr('src', 'https://images.ushopal.com/1-2g.jpg')
-//            $('#moveImg3').attr('src', 'https://images.ushopal.com/2-1g.gif')
-//            $('#moveImg4').attr('src', 'https://images.ushopal.com/2-2g.gif')
-//            $('#moveImg5').attr('src', 'https://images.ushopal.com/3-1g.gif')
-//            $('#moveImg6').attr('src', 'https://images.ushopal.com/3-2g.gif')
-//            $('#moveImg7').attr('src', 'https://images.ushopal.com/4-1g.gif')
-//            $('#moveImg8').attr('src', 'https://images.ushopal.com/4-2g.gif')
-//            $('#moveImg9').attr('src', 'https://images.ushopal.com/5-1g.gif')
-//            $('#moveImg10').attr('src', 'https://images.ushopal.com/5-2g.jpg')
-//            $('#moveImg11').css('display', 'none')
-//            $('#moveImg12').css('display', 'none')
-//        }
 
 //           监管跳转
         $(".certain").click(function(){
@@ -486,10 +466,11 @@
 
 
 
+         //参数设置，若用默认值可以省略以下面代
 
-        var form = new FormData($("#form ")[0]);
+            var form = new FormData($("#form ")[0]);
 
-        $("#g").click(function () {
+            $("#g").click(function () {
             //            $random_str 是 8位随机字符串
             function randomString(e) {
                 e = e || 32;
@@ -527,15 +508,17 @@
                 },
                 success: function(data) {  //成功
                     console.log(data);  //就将返回的数据显示出来
-//                    window.location.href="跳转页面"
+                    $('#myModal').modal('show');
+                    setTimeout(function(){
+                        $("#myModal").modal("hide");
+                        window.location.reload();
+
+                    },1200);
                 }
             });
         });
 
-
-
     })
-
 
 </script>
 

@@ -18,6 +18,7 @@ class DefaultController extends AbstractController
     public function index(Request $request,LoggerInterface $logger)
     {
 
+        $env =  getenv('APP_ENV');
         $lang = $request->request->get('lang', 'jp');
         $lang = strtolower($lang);
         if($lang !== 'jp') {
@@ -52,7 +53,7 @@ class DefaultController extends AbstractController
             return $this->json(['code'=> 403, 'message'=> 'invalid sign']);
         }
 
-        parse_str($message_str,$message);
+        parse_str($message_str,$messages);
 
         $host = $request->headers->get('host');
         $content_type = $request->headers->get('content-type');
@@ -75,13 +76,29 @@ class DefaultController extends AbstractController
         // Create the Mailer using your created Transport
         $mailer = new \Swift_Mailer($transport);
 
-        // Create a message
-        $message = (new \Swift_Message('new message'))
-            ->setFrom(['noreply@ushopal.com'])
-            ->setTo(['huiming.yang@ushopal.com' => 'Yang'])
-            ->setCc(['jarod@ushopal.com' => 'Jarod Chianng'])
-            ->setBody('Here is the message itself:'. "\n\n". $message_str. ' '. $lang)
-            ;
+        $m_ = [];
+        foreach( $messages as $k => $v ) {
+            $m_ [] = $k . ': ' . $v . "\n";
+        } 
+        if($env === 'prod') {
+            // Create a message
+            $message = (new \Swift_Message('New message'. '['.$env.']'))
+                ->setFrom(['noreply@ushopal.com'])
+                ->setTo(['dentsu@ushopal.com' => 'Dentsu'])
+                ->setBcc(['jarod@ushopal.com' => 'Jarod Chianng','huiming.yang@ushopal.com' => 'Yang'])
+                ->setBody('Here is the message itself:'. "\n\n". implode('', $m_). ' '. $lang)
+                ;
+///                ->setBody('Here is the message itself:'. "\n\n". $message_str. ' '. $lang)
+        } else {
+
+            // Create a message
+            $message = (new \Swift_Message('new message'. '['.$env.']'))
+                ->setFrom(['noreply@ushopal.com'])
+                ->setTo(['huiming.yang@ushopal.com' => 'Yang'])
+                ->setBcc(['jarod@ushopal.com' => 'Jarod Chianng'])
+                ->setBody('Here is the message itself:'. "\n\n". implode('', $m_). ' '. $lang)
+                ;
+        }
             //->setCc(['huiming.yang@ushopal.com'])
 //            ->setTo(['jarod@ushopal.com' => 'Jarod Chiang'])
 
