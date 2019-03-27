@@ -34,7 +34,8 @@
         section table{background-color:#A8A7A7;}
         ::-moz-selection{background:#404040;color:#B50D0D;}
         ::selection{background:#404040;color:#B50D0D;}
-        a.brand{background-image:url(https://images.ushopal.com/logo53s.png);}
+        a.brand{background:url( https://images.ushopal.com/logo%20--53.png) no-repeat; background-size:100% 100%;}
+
         a, a:hover, a:active{color:#830909;
 
             font-weight: 400;}
@@ -42,6 +43,7 @@
         div.navbar-inner, .navbar .nav li ul{background:#000;color:#A8A7A7; opacity: .8; }
         a.btn-navbar{background:#363636;color:#A8A7A7;}
         /*text-shadow:1px 1px 0px #575757;*/
+
         .navbar .nav li a{color:#A8A7A7;
             font-weight: 300;}
         .navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
@@ -99,6 +101,8 @@
             width: 100%;
             color: #7e8c8d;
             text-decoration: none;
+
+
         }
         .lines{
             float: left;
@@ -107,24 +111,26 @@
             background-color: #fff;
             margin: 5px 20px 0px 0px;
 
+
         }
         img{
             width: 100%;
         }
         .gif{
             float: left;
-            width: 33.3%;
+            width: 33.33333%;
         }
         .input{
             width: 100%;
             position: relative;
         }
+
         .input  .full{
             height: 4%;
             width: 41%;
             color: #fff;
             position: absolute;
-            top: 30%;
+            top: 34%;
             left: 5.20%;
             border-radius: 0;
             background: none;
@@ -134,21 +140,22 @@
             width: 41%;
             color: #fff;
             position: absolute;
-            top: 42%;
+            top: 47.5%;
             left: 5.20%;
             border-radius: 0;
             background: none;
         }
         .input  textarea{
-            height: 15%;
+            height: 16.5%;
             width: 89%;
             color: #fff;
             position: absolute;
-            top: 54%;
+            top: 61%;
             left: 5.20%;
             border-radius: 0;
             background: none;
         }
+
         .nav>li{
             font-size: 14px;
         }
@@ -158,6 +165,59 @@
         .nav>li:nth-child(6)>a:hover{
             color: #fff;
         }
+        body{
+            width: 100%;
+            position: relative;
+        }
+
+
+        .video{
+            position: absolute;
+            outline: none;
+            top: 6.50%;
+            left: 25%;
+            width: 50%;
+            height: 400px;
+        }
+        #videoPlay1{
+            vertical-align: middle;
+        }
+
+        /*.input .bck{*/
+            /*position: absolute;*/
+            /*width: 100%;*/
+            /*background-color: #000;*/
+            /*height: 58px;*/
+            /*bottom: 0;*/
+
+        /*}*/
+        .control{
+            position: relative;
+        }
+        .cot{
+            width: 100%;
+            height: 50px;
+            background-color: #000;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .const{
+            display: inline-flex;
+            justify-content: space-between;
+            width: 25%;
+
+        }
+        .const li{
+            width: 20px;
+            height: 20px;
+            line-height: 50px;
+        }
+
+
+        #slides img{
+        vertical-align:bottom; display:block;
+        }
+
 
     </style>
 
@@ -209,20 +269,39 @@
 <div class="container" id="documenter_content">
     <div id="documenter-cover">
         <img  id="myImage1" src="https://images.ushopal.com/05a10103bf6837c36cfc381317c8dfd9_99441941.jpg" alt="">
+        <img  id="myImages"  src="https://images.ushopal.com/extra.jpg" alt="">
+        <video id="videoPlay1"  class="video" src="https://images.ushopal.com/extra.mp4"
+               controls
+               loop="loop" x-webkit-airplay="true" webkit-playsinline="true"
+               poster="https://images.ushopal.com/e12.jpg"
+
+        >
     </div>
-    <section id="how_to_start">
+    <section id="how_to_start"  >
         <ul>
             <li><img  id="myImage2"   src="https://images.ushopal.com/p12.jpg" alt=""></li>
-            <li><img   id="myImage3"   src="https://images.ushopal.com/p3%E4%BF%AE%E6%AD%A3.jpg" alt=""></li>
+            <li><img   id="myImage3"   src="https://images.ushopal.com/p3-pc-en.jpg" alt=""></li>
             <li><img   id="myImage4"   src="https://images.ushopal.com/15d8f132f8eb2d7ef133630765479992_1713269878.jpg" alt=""></li>
-            <li><img    id="myImage5"  src="https://images.ushopal.com/cf6416aac6a6bc94c855d790d8ee7c99_1611137524.jpg" alt=""></li>
             <img  id="myImage6"   src="https://images.ushopal.com/ffe019f9166e7ef1b8e96c2fb62bac1b_369387531.jpg" alt="">
+            <li><img    id="myImage5"  src="https://images.ushopal.com/p5-pc-en-s.jpg" alt=""></li>
         </ul>
     </section>
     <section id="options">
-        <img  id="myImage7"   src="https://images.ushopal.com/team.jpg" alt="">
-        <img   id="myImage8"  src="" alt="">
-        <img    id="myImage9"     src="" alt="">
+        <img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-en.jpg" alt="">
+        <img src="" alt="" class="switcher">
+        <img src="" alt="" class="switch" >
+        <ul class="control">
+            <li class="figure"> <img id="profile0"   src="" alt=""></li>
+            <li class="figure"><img  id="myImage8" src="" alt=""></li>
+            <li class="figure"><img  id="myImage9" src="" alt=""></li>
+            <li class="figure"><img  id="profile01" src="" alt=""></li>
+            <li class="figure"><img  id="profile02" src="" alt=""></li>
+            <li class="figure"><img  id="profile03" src="" alt=""></li>
+            <li class="figure"><img  id="profile04" src="" alt=""></li>
+            <li class="figure"><img  id="profile05" src="" alt=""></li>
+            <li class="figure"><img  id="profile06" src="" alt=""></li>
+            <li class="figure"><img  id="profile07" src="" alt=""></li>
+        </ul>
     </section>
 
     <section id="slides">
@@ -235,13 +314,14 @@
             <li class="gif" ><img  id="moveImg5" src="https://images.ushopal.com/2-2m.gif"></li>
             <li class="gif" ><img  id="moveImg6" src="https://images.ushopal.com/2-3.gif"></li>
             <li class="gif" ><img  id="moveImg7" src="https://images.ushopal.com/3-1.jpg"></li>
-            <li class="gif" ><img  id="moveImg8" src="https://images.ushopal.com/3-2.jpg"></li>
+            <li class="gif" ><img  id="moveImg8" src="https://images.ushopal.com/3-2-pc-a.jpg"></li>
             <li class="gif" ><img  id="moveImg9" src="https://images.ushopal.com/3-3.gif"></li>
             <li class="gif" ><img  id="moveImg10" src="https://images.ushopal.com/4.1-5.8m.gif"></li>
             <li class="gif" ><img  id="moveImg11" src="https://images.ushopal.com/4.2-3%EF%BC%8C6m.gif"></li>
-            <li class="gif" ><img  id="moveImg12" src="https://images.ushopal.com/4-3.jpg"></li>
+            <li class="gif" ><img  id="moveImg12" src="https://images.ushopal.com/4-3-pc-a.jpg"></li>
+
         </ul>
-        <img  id="wap1"   src="https://images.ushopal.com/Homepage_10s.jpg" alt="">
+        <img  id="wap1"   src="https://images.ushopal.com/Homepage_10s-pc.jpg" alt="">
         <img  id="wap2"   src="" alt="">
         <ul>
             <!--<li><img src="https://video.ushopal.com/G5.png" alt=""></li>-->
@@ -250,19 +330,30 @@
     </section>
     <section id="media_in_slide">
 
-        <img   id="wap3"  src="https://images.ushopal.com/c2c64cb31ce728820b091742ca4e6d3e_591111055.jpg" alt="">
+        <img   id="wap3"  src="https://images.ushopal.com/our%20brands-pc-en.jpg" alt="">
         <img  id="wap4"   src="" alt="">
     </section>
     <section id="banner_timer" class="input">
+        <div class="bck"></div>
         <ul>
             <input type="text" style="border: 0px;" class="full">
             <input type="text" style="border: 0px;" class="eiall">
             <textarea name="" id="" cols="30" rows="10" style="border: 0px;"></textarea>
-            <img   id="wap5"  src="https://images.ushopal.com/%E5%AE%98%E7%BD%91-Home%20Page-contact%20us.png" alt="">
+            <img   id="wap5"  src="https://images.ushopal.com/site-pc-en-s.png" alt="">
+
         </ul>
     </section>
+  <div class="cot">
+    <ul class="const">
+        <li><a href="https://www.instagram.com/ushopal_group/"><img src="https://images.ushopal.com/60instragram.png" alt=""></a></li>
+        <li><a href="https://weibo.com/51xdb?is_hot=1"><img src="https://images.ushopal.com/60weibo.png" alt=""></a></li>
+        <li><a href="https://www.facebook.com/Shopal-2207775795962669/?__tn__=%2Cd%3C-R&eid=ARDn5DYcq-8KBbQzrRkNbzkkEtYhmrVi3HU7qrIDTapGye6AlUTJGPTV7Tv8Wq_I54ZCCmEg9jjTWGVJ"><img src="https://images.ushopal.com/60facebook.png" alt=""></a></li>
+        <li><a href="https://www.linkedin.com/company/ushopal/"><img src="https://images.ushopal.com/60linkedin.png" alt=""></a></li>
+    </ul>
+  </div>
+
     <div class="contenst">
-        <p><span style="cursor:pointer"  class="certain">沪ICP备15003557号-2</span> &nbsp;&nbsp;&nbsp;Copyright © 2015-2018 <a href="#">ushopal.com</a>&nbsp;版权所有
+        <p><span style="cursor:pointer"  class="certain">沪ICP备15003557号-2</span> &nbsp;&nbsp;&nbsp;Copyright © 2015-2019 <a href="#">ushopal.com</a>&nbsp;版权所有
         </p>
     </div>
 
@@ -290,25 +381,136 @@
             var  middle= Number((W-200)/2)+'px';
 //            大图区域
             console.log(window.screen.width);
+
+            $('#myImages').css('display', 'none');
 //            $('#myImage1').attr('src', 'img/f5/content_list.jpg')
             document.getElementById("myImage1").src="https://images.ushopal.com/p1u.jpg";
             document.getElementById("myImage2").src="https://images.ushopal.com/p2u.jpg";
             document.getElementById("myImage3").src="https://images.ushopal.com/p3u.jpg";
-            document.getElementById("myImage4").src="https://images.ushopal.com/p4u.jpg";
+            document.getElementById("myImage4").src="https://images.ushopal.com/p3-wap-en.jpg";
             document.getElementById("myImage5").src="https://images.ushopal.com/p5u.jpg";
             document.getElementById("myImage6").src="https://images.ushopal.com/p6u.jpg";
             document.getElementById("myImage7").src="https://images.ushopal.com/p7u.jpg";
-            document.getElementById("myImage8").src="https://images.ushopal.com/p8u.jpg";
-            document.getElementById("myImage9").src="https://images.ushopal.com/p9u.jpg";
-            document.getElementById("myImage10").src="https://images.ushopal.com/p10u.jpg";
+
+
+//                                中间人物渲染展示
+            $('.figure').css({'width':'50%','float': 'left', });
+
+            $('#profile0').attr('src', ' https://images.ushopal.com/profile-wap-en-01.jpg');
+            $('#myImage8').attr('src', ' https://images.ushopal.com/profile-wap-en-02.jpg')
+            $('#myImage9').attr('src', ' https://images.ushopal.com/profile-wap-en-03.jpg')
+            $('#profile01').attr('src', 'https://images.ushopal.com/profile-wap-en-04.jpg');
+            $('#profile02').attr('src', ' https://images.ushopal.com/profile-wap-en-05.jpg');
+            $('#profile03').attr('src', ' https://images.ushopal.com/profile-wap-en-06.jpg');
+            $('#profile04').attr('src', ' https://images.ushopal.com/profile-wap-en-07.jpg');
+            $('#profile05').attr('src', ' https://images.ushopal.com/profile-wap-en-08.jpg');
+            $('#profile06').attr('src', ' https://images.ushopal.com/profile-wap-en-09.jpg');
+            $('#profile07').attr('src', 'https://images.ushopal.com/10.jpg');
+//                                中间人物渲染展示
+
+
+
+//                                       展示人物简介点击切换
+            $('.switch').css({
+                'width': '38px',
+                'height': '38px !important',
+                'position': 'absolute',
+                'top': '47.40%',
+                'right': '20px',
+            })
+            $("#profile0").click(function(){
+                  $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                  $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-01.jpg');
+                  $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+
+            $("#myImage8").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-02.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+
+            $("#myImage9").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-03.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+
+            $("#profile01").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-04.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+            $("#profile02").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-05.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+            $("#profile03").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-07.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+            $("#profile04").click(function(){
+                $('.control').css('display', 'none');
+                $('.switch').css('display', 'block');
+                $('.switcher').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-0.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+            $("#profile05").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-08.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+            $("#profile06").click(function(){
+                $('.control').css('display', 'none');
+                $('.switcher').css('display', 'block');
+                $('.switch').css('display', 'block');
+                $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-en-09.jpg');
+                $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+            })
+
+
+
+
+
+
+
+            $(".switch").click(function(){
+                $('.control').css('display', 'block');
+                $('.switcher').css('display', 'none');
+                $('.switch').css('display', 'none');
+
+            })
+
+
 //            document.getElementById("myImage11").src="https://images.ushopal.com/q1.jpg";
             document.getElementById("wap1").src="https://images.ushopal.com/p12u.jpg";
             document.getElementById("wap2").src="https://images.ushopal.com/p13u.jpg";
             document.getElementById("wap3").src="https://images.ushopal.com/p14u.jpg";
             document.getElementById("wap4").src="https://images.ushopal.com/p15u.jpg";
-            document.getElementById("wap5").src="https://images.ushopal.com/p16u.jpg";
+            document.getElementById("wap5").src="https://images.ushopal.com/p16-wap-en-s.jpg";
+
+
             $("#container").css("width",W)
             $("#brand").css("margin-left",middle);
+            $("#how_to_start").css("margin-top",'170px');
+
 
 //            中间动图部分
             $('.gif').css('width', '50%');
@@ -316,14 +518,26 @@
             $('#moveImg2').attr('src', 'https://images.ushopal.com/1-2g.jpg')
             $('#moveImg3').attr('src', 'https://images.ushopal.com/2-1g.gif')
             $('#moveImg4').attr('src', 'https://images.ushopal.com/2-2g.gif')
-            $('#moveImg5').attr('src', 'https://images.ushopal.com/3-1g.gif')
+            $('#moveImg5').attr('src', 'https://images.ushopal.com/3-1-wap-a.gif')
             $('#moveImg6').attr('src', 'https://images.ushopal.com/3-2g.gif')
             $('#moveImg7').attr('src', 'https://images.ushopal.com/4-1g.gif')
             $('#moveImg8').attr('src', 'https://images.ushopal.com/4-2g.gif')
             $('#moveImg9').attr('src', 'https://images.ushopal.com/5-1g.gif')
-            $('#moveImg10').attr('src', 'https://images.ushopal.com/5-2g.jpg')
+            $('#moveImg10').attr('src', 'https://images.ushopal.com/4-3app-wap-a.jpg')
             $('#moveImg11').css('display', 'none')
             $('#moveImg12').css('display', 'none')
+
+
+            $('#videoPlay1').css({
+//                'position': 'static',
+                'width':S,
+                "height":'260px',
+                'left':'0'
+
+            })
+
+
+
         }
 
 //           监管跳转
@@ -340,6 +554,15 @@
             }, 1000);
             return false;
         });
+        var video1=document.getElementById("videoPlay1");
+
+        video1.onclick=function(){
+            if(video1.paused){
+                video1.play();
+            }else{
+                video1.pause();
+            }
+        }
 
 
 
