@@ -29,6 +29,7 @@
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <style>
+        html,body{overflow-x:hidden;}
         html, body{background-color:#A8A7A7;color:#363636;}
         h1,h2,h3,h4,h5,h6{color:#363636;}
         section table{background-color:#A8A7A7;}
@@ -85,6 +86,8 @@
             display: block;
             float: right;
             margin: 10px 80px 0 0px !important;
+            bottom: 0;
+
         }
         p{
             /*width: 100%;*/
@@ -99,6 +102,7 @@
             width: 100%;
             color: #7e8c8d;
             text-decoration: none;
+
         }
         .lines{
             float: left;
@@ -115,52 +119,52 @@
             float: left;
             width: 33.3%;
         }
-        .input{
-            width: 100%;
-            position: relative;
-        }
+        /*.input{*/
+            /*width: 100%;*/
+            /*position: relative;*/
+        /*}*/
 
-        .input  .full{
-            height: 4%;
-            width: 41%;
-            color: #fff;
-            position: absolute;
-            top: 34%;
-            left: 5.20%;
-            border-radius: 0;
-            background: none;
-        }
-        .input  .eiall{
-            height: 4%;
-            width: 41%;
-            color: #fff;
-            position: absolute;
-            top: 47.5%;
-            left: 5.20%;
-            border-radius: 0;
-            background: none;
-        }
-        .input  textarea{
-            height: 16.5%;
-            width: 89%;
-            color: #fff;
-            position: absolute;
-            top: 61%;
-            left: 5.20%;
-            border-radius: 0;
-            background: none;
-        }
+        /*.input  .full{*/
+            /*height: 4%;*/
+            /*width: 41%;*/
+            /*color: #fff;*/
+            /*position: absolute;*/
+            /*top: 34%;*/
+            /*left: 5.20%;*/
+            /*border-radius: 0;*/
+            /*background: none;*/
+        /*}*/
+        /*.input  .eiall{*/
+            /*height: 4%;*/
+            /*width: 41%;*/
+            /*color: #fff;*/
+            /*position: absolute;*/
+            /*top: 47.5%;*/
+            /*left: 5.20%;*/
+            /*border-radius: 0;*/
+            /*background: none;*/
+        /*}*/
+        /*.input  textarea{*/
+            /*height: 16.5%;*/
+            /*width: 89%;*/
+            /*color: #fff;*/
+            /*position: absolute;*/
+            /*top: 61%;*/
+            /*left: 5.20%;*/
+            /*border-radius: 0;*/
+            /*background: none;*/
+        /*}*/
 
 
 
         .nav>li{
             font-size: 14px;
         }
-        .nav>li:nth-child(6){
+        .nav>li:nth-child(7){
             font-size: 12px;
         }
 
-        .nav>li:nth-child(6)>a:hover{
+        .nav>li:nth-child(7)>a:hover{
             color: #fff;
         }
         body{
@@ -212,6 +216,17 @@
             height: 20px;
             line-height: 50px;
         }
+        .news{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .news li {
+            width: 33.333%;
+        }
+        .new_wap li{
+            float: left;
+            width: 50%;
+        }
 
     </style>
 
@@ -234,9 +249,13 @@
 
                     <li><a href="#options" title="Options">核 心 团 队 <div class="lines"></div></a></li>
 
-                    <li><a href="#slides" title="Slides">案 例 展 示 <div class="lines"></div></a></li>
+                    <li><a href="#slides" title="Slides">服 务 的 品 牌 <div class="lines"></div></a></li>
 
-                    <li><a href="#media_in_slide" title="Media in Slide">服 务 的 品 牌 <div class="lines"></div></a></li>
+                    <!--<li><a href="#media_in_slide" title="Media in Slide">服 务 的 品 牌 <div class="lines"></div></a></li>-->
+
+
+                    <li><a href="#oNews" title="oNews">新 闻 <div class="lines"></div></a></li>
+
 
                     <li><a href="#banner_timer" title="Banner Timer">联 系 我 们 <div class="lines"></div></a></li>
 
@@ -278,7 +297,7 @@
         </ul>
     </section>
     <section id="options">
-        <img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-ch.jpg" alt="">
+        <img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-ch-pc.jpg" alt="">
         <img src="" alt="" class="switcher">
         <img src="" alt="" class="switch" >
         <ul class="control">
@@ -288,14 +307,14 @@
             <li class="figure"><img  id="profile01" src="" alt=""></li>
             <li class="figure"><img  id="profile02" src="" alt=""></li>
             <li class="figure"><img  id="profile03" src="" alt=""></li>
-            <li class="figure"><img  id="profile04" src="" alt=""></li>
+            <!--<li class="figure"><img  id="profile04" src="" alt=""></li>-->
             <li class="figure"><img  id="profile05" src="" alt=""></li>
             <li class="figure"><img  id="profile06" src="" alt=""></li>
-            <li class="figure"><img  id="profile07" src="" alt=""></li>
+            <!--<li class="figure"><img  id="profile07" src="" alt=""></li>-->
         </ul>
     </section>
     <section id="slides">
-        <img  id="myImage10"  src="https://images.ushopal.com/o2.jpg" alt="">
+        <img  id="myImage10"  src="https://images.ushopal.com/brands-pc-ch.jpg" alt="">
         <ul>
             <li class="gif"><img  id="moveImg1"  src="https://images.ushopal.com/1db968c681a8bb4922c30145db759d47_1607575484.jpg" alt=""></li>
             <li class="gif"><img id="moveImg2" src="https://images.ushopal.com/72bcaa255f4211c17b635bed869e4e54_701278947.jpg" alt=""></li>
@@ -312,31 +331,51 @@
         </ul>
         <img id="wap1" src="https://images.ushopal.com/o3.jpg" alt="">
         <img  id="wap2"   src="" alt="">
+        <img id="wap3" src="https://images.ushopal.com/our%20duan-pc-ch.jpg" alt="">
+        <img  id="wap4"   src="" alt="">
+        <img  id="wap6"   src="https://images.ushopal.com/15-1.jpg" alt="">
         <ul>
             <!--<li><img src="https://video.ushopal.com/G5.png" alt=""></li>-->
             <!--<li><img src="https://video.ushopal.com/G6.png" alt=""></li>-->
         </ul>
     </section>
-    <section id="media_in_slide">
-        <img id="wap3" src="https://images.ushopal.com/our%20brands-pc-ch.jpg" alt="">
-        <img  id="wap4"   src="" alt="">
-        <img  id="wap6"   src="https://images.ushopal.com/15-1.jpg" alt="">
+    <!--<section id="media_in_slide">-->
+      <!---->
+    <!--</section>-->
+
+    <section id="oNews">
+        <img   id="waps"  src="https://images.ushopal.com/news-pc-ch.jpg" alt="">
+        <ul class="news">
+            <li><a href="https://www.instagram.com/p/BvL69oVgyKy/" target="_Blank"><img class="norm01" src="https://images.ushopal.com/wu-pc-a.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BvECmLig5PK/" target="_Blank"><img  class="norm02"  src="https://images.ushopal.com/wu01-pc-a.jpg" alt=""></a></li>
+            <li><a href="http://ent.ifeng.com/a/20190308/43193988_0.shtml?from=singlemessage&isappinstalled=0" target="_Blank"><img class="norm03" src="https://images.ushopal.com/wu02-pc-a.jpg" alt=""></a></li>
+        </ul>
+
+        <ul class="new_wap" style="display: none;">
+            <li><a href="https://www.instagram.com/p/BvL69oVgyKy/" target="_Blank"><img class="norm01" src="https://images.ushopal.com/newsapp1-wap.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BvECmLig5PK/" target="_Blank"><img  class="norm02"  src="https://images.ushopal.com/newsapp2-wap.jpg" alt=""></a></li>
+            <li><a href="http://ent.ifeng.com/a/20190308/43193988_0.shtml?from=singlemessage&isappinstalled=0" target="_Blank"><img class="norm03" src="https://images.ushopal.com/newsapp3-wap.jpg" alt=""></a></li>
+            <li><a href=""><img class="norm04" src="https://images.ushopal.com/newsapp4-wap.jpg" alt=""></a></li>
+        </ul>
+
     </section>
-    <section id="banner_timer" class="input">
-        <div class="bck"></div>
+
+
+
+    <section id="banner_timer" >
         <ul>
-            <input type="text" style="border: 0px;" class="full">
-            <input type="text" style="border: 0px;" class="eiall">
-            <textarea name="" id="" cols="30" rows="10" style="border: 0px;"></textarea>
             <img id="wap5"  src="https://images.ushopal.com/site-pc-ch-s.png" alt="">
         </ul>
+
     </section>
+
+
     <div class="cot">
         <ul class="const">
-            <li><a href="https://www.instagram.com/ushopal_group/"><img src="https://images.ushopal.com/60instragram.png" alt=""></a></li>
-            <li><a href="https://weibo.com/51xdb?is_hot=1"><img src="https://images.ushopal.com/60weibo.png" alt=""></a></li>
-            <li><a href="https://www.facebook.com/Shopal-2207775795962669/?__tn__=%2Cd%3C-R&eid=ARDn5DYcq-8KBbQzrRkNbzkkEtYhmrVi3HU7qrIDTapGye6AlUTJGPTV7Tv8Wq_I54ZCCmEg9jjTWGVJ"><img src="https://images.ushopal.com/60facebook.png" alt=""></a></li>
-            <li><a href="https://www.linkedin.com/company/ushopal/"><img src="https://images.ushopal.com/60linkedin.png" alt=""></a></li>
+            <li><a target="_Blank" href="https://www.instagram.com/ushopal_group/"><img src="https://images.ushopal.com/60instragram.png" alt=""></a></li>
+            <li><a target="_Blank" href="https://weibo.com/51xdb?is_hot=1"><img src="https://images.ushopal.com/60weibo.png" alt=""></a></li>
+            <li><a target="_Blank" href="https://www.facebook.com/Shopal-2207775795962669/?__tn__=%2Cd%3C-R&eid=ARDn5DYcq-8KBbQzrRkNbzkkEtYhmrVi3HU7qrIDTapGye6AlUTJGPTV7Tv8Wq_I54ZCCmEg9jjTWGVJ"><img src="https://images.ushopal.com/60facebook.png" alt=""></a></li>
+            <li><a target="_Blank" href="https://www.linkedin.com/company/ushopal/"><img src="https://images.ushopal.com/60linkedin.png" alt=""></a></li>
         </ul>
     </div>
     <div class="contenst">
@@ -379,10 +418,12 @@
         //            }
         //        }
         window.onload = function(){
+//            document.documentElement.style.overflow='hidden';
             let   adaptW=  window.screen.width;
             console.log(window.screen.width);
             //                 wap端修改
             if(adaptW<=600){
+                document.body.style.overflow='hidden';//手机版设置这个
                 var W=window.screen.width;
                 var SI=window.screen.width+'px';
 
@@ -393,7 +434,7 @@
                     'width':SI,
                     "height":'260px',
                     'left':'0',
-                    'top':'6.17%'
+                    'top':'5.9%'
 
                 })
 
@@ -423,11 +464,12 @@
                 $('#profile01').attr('src', 'https://images.ushopal.com/profile-wap-ch-04.jpg');
                 $('#profile02').attr('src', ' https://images.ushopal.com/profile-wap-ch-05.jpg');
                 $('#profile03').attr('src', ' https://images.ushopal.com/profile-wap-ch-06.jpg');
-                $('#profile04').attr('src', ' https://images.ushopal.com/profile-wap-ch-07.jpg');
+//                $('#profile04').attr('src', ' https://images.ushopal.com/profile-wap-ch-07.jpg');
                 $('#profile05').attr('src', ' https://images.ushopal.com/profile-wap-ch-08.jpg');
                 $('#profile06').attr('src', ' https://images.ushopal.com/profile-wap-ch-09.jpg');
-                $('#profile07').attr('src', 'https://images.ushopal.com/10.jpg');
-                document.getElementById("myImage10").src="https://images.ushopal.com/become10.jpg";
+//                $('#profile07').attr('src', 'https://images.ushopal.com/10.jpg');
+                $('#myImage10').attr('src', 'https://images.ushopal.com/p10-wap-ch.jpg');
+
 //                                中间人物渲染展示
 
 
@@ -436,7 +478,7 @@
                     'width': '38px',
                     'height': '38px !important',
                     'position': 'absolute',
-                    'top': '42.40%',
+                    'top': '41.4%',
                     'right': '20px',
                 })
                 $("#profile0").click(function(){
@@ -484,13 +526,13 @@
                     $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-ch-07s.jpg');
                     $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
                 })
-                $("#profile04").click(function(){
-                    $('.control').css('display', 'none');
-                    $('.switch').css('display', 'block');
-                    $('.switcher').css('display', 'block');
-                    $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-ch-06.jpg');
-                    $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
-                })
+//                $("#profile04").click(function(){
+//                    $('.control').css('display', 'none');
+//                    $('.switch').css('display', 'block');
+//                    $('.switcher').css('display', 'block');
+//                    $('.switcher').attr('src', 'https://images.ushopal.com/Pdetails-wap-ch-06.jpg');
+//                    $('.switch').attr('src', 'https://images.ushopal.com/switcher.png');
+//                })
                 $("#profile05").click(function(){
                     $('.control').css('display', 'none');
                     $('.switcher').css('display', 'block');
@@ -524,7 +566,7 @@
 //            document.getElementById("myImage11").src="https://images.ushopal.com/q1.jpg";
                 document.getElementById("wap1").src="https://images.ushopal.com/12.jpg";
                 document.getElementById("wap2").src="https://images.ushopal.com/13.jpg";
-                document.getElementById("wap3").src="https://images.ushopal.com/14.jpg";
+                document.getElementById("wap3").src="https://images.ushopal.com/p14-wap-a.jpg";
                 document.getElementById("wap4").src="https://images.ushopal.com/15.jpg";
 
                 document.getElementById("wap5").src="https://images.ushopal.com/p16-wap-ch-s.jpg";
@@ -534,6 +576,17 @@
                 $("#container").css("width",W)
                 $("#brand").css("margin-left",middle);
                    $("#how_to_start").css("margin-top",'200px');
+
+
+
+
+
+                $('.news').css('display', 'none');
+                $('.new_wap').css('display','block');
+                $('#waps').attr('src', 'https://images.ushopal.com/news-wap-ch.jpg');
+
+
+
 
 
 //            中间动图部分
@@ -560,13 +613,7 @@
 
         var video1=document.getElementById("videoPlay1");
 
-        video1.onclick=function(){
-            if(video1.paused){
-                video1.play();
-            }else{
-                video1.pause();
-            }
-        }
+
 
 
 
