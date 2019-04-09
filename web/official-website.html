@@ -9,6 +9,9 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
+
+
+
 </script>
 
 <head>
@@ -27,9 +30,28 @@
     <link href="https://images.ushopal.com/js/bootstrap-responsive.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/documenter_style.css" rel="stylesheet">
     <link rel="icon" href="https://images.ushopal.com/OMS.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script language="JavaScript">
+
+        console.log(document.referrer);
+        // if(document.referrer=='http://localhost:63343/official-websites/web/secondary.html'){
+        //
+        // }else {
+        //     var lang = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+        //     //获取浏览器配置语言 #括号内是个运算，运算过后赋值给lang，当?前的内容为true时把?后的值赋给lang，为False时把:后的值赋给lang
+        //     var lang = lang.substr(0, 2);//获取lang字符串的前两位
+        //     console.log(lang);
+        //     if (lang == 'zh') {
+        //         window.location.href = 'http://localhost:63343/official-websites/web/secondary.html'
+        //     } else {
+        //         window.location.href = 'http://localhost:63343/official-websites/web/official-website.html'
+        //     }
+        // }
+    </script>
     <style>
         html,body{overflow-x:hidden;}
         html, body{background-color:#A8A7A7;color:#363636;}
@@ -175,14 +197,7 @@
         }
 
 
-        .video{
-            position: absolute;
-            outline: none;
-            top: 6.50%;
-            left: 25%;
-            width: 50%;
-            height: 400px;
-        }
+
         #videoPlay1{
             vertical-align: middle;
         }
@@ -234,8 +249,106 @@
             width: 50%;
         }
 
+        @media screen and (min-width: 480px) {
+            .video{
+                position: absolute;
+                outline: none;
+                top: 6.50%;
+                left: 25%;
+                width: 50%;
+                height: 400px;
+            }
+            .leaderInfo {
+                background: url("https://images.ushopal.com/leaderInfo-bg.jpg") no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+                width: 100%;
+            }
 
+            .swiper-container {
+                width: 1200px;
+            }
 
+            .swiper-slide {
+                display: block;
+                position: relative;
+                z-index: 3;
+                width: 280px !important;
+                margin: 60px 0;
+            }
+
+            .swiper-wrapper img {
+                width: 100%;
+            }
+        }
+
+        .leaderInfo-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.6);
+            font-size: 12px;
+            bottom: 100px;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-size: 100% 100%;
+            display: none;
+        }
+
+        .leaderInfo-text p {
+            line-height: 17px;
+            text-align: left;
+            font-weight: 200;
+            color: #fff;
+            word-break: break-all;
+            background: transparent;
+        }
+
+        .leaderInfo-text p::selection {
+            background: #fff;
+            color: #000;
+        }
+
+        .leaderInfo-text p::-moz-selection {
+            background: #fff;
+            color: #000;
+        }
+
+        .leaderInfo-text p::-webkit-selection {
+            background: #fff;
+            color: #000;
+        }
+
+        @media screen and (max-width: 480px){
+            .leaderInfo{
+                background: url("https://images.ushopal.com/leaderInfo-phonebg.jpg") no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+                width:100%;
+            }
+            .swiper-slide {
+                display: block;
+                position: relative;
+                z-index: 3;
+                /*margin: 30px auto;*/
+            }
+            .swiper-wrapper img {
+                 width: 280px;
+                margin:30px auto;
+             }
+            .leaderInfo-text {
+                margin:30px auto;
+                width: 280px;
+                height:401px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+            }
+            　　}
     </style>
 
 
@@ -288,7 +401,7 @@
     <div id="documenter-cover">
         <img  id="myImage1" src="https://images.ushopal.com/05a10103bf6837c36cfc381317c8dfd9_99441941.jpg" alt="">
         <img  id="myImages"  src="https://images.ushopal.com/extra.jpg" alt="">
-        <video id="videoPlay1"  class="video" src="https://images.ushopal.com/extra.mp4"
+        <video id="videoPlay1"  class="video" src="https://h20.oss-us-west-1.aliyuncs.com/extra.mp4"
                controls
                loop="loop" x-webkit-airplay="true" webkit-playsinline="true"
                poster="https://images.ushopal.com/e12.jpg"
@@ -305,21 +418,105 @@
         </ul>
     </section>
     <section id="options">
-        <img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-en-pc.jpg" alt="">
+        <!--<img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-en-pc.jpg" alt="">-->
+        <img id="myImage7"   src="https://images.ushopal.com/leaderInfo-title.jpg" alt="">
+        <div class="leaderInfo">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-GL.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-GLmask.png') no-repeat">
+                                <p>MBA from Wharton School of University of Pennsylvania, US, where she double majored in Finance and Entrepreneurial Management.
+                                    VP, Digital and Ecommerce at Johnson & Johnson.</p>
+                                <p>Lu’s career spans from building ambitious entrepreneurial start-ups , leading projects at strategy consultancy powerhouse, the Boston Consulting Group, building and operating hyper-complex supply chain planning for Anheuser Busch InBev, to leading digital innovation and capability building for VF Corporation, the world’s largest apparel company that owns brands such as The North Face, Lee, and Timberland.</p>
+                                <p>Lu was cited in VF 2012 annual report and Wall Street VF Investor report for her outstanding effort in building digital excellence as a competitive advantage.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-SG.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-SGmask.png') no-repeat">
+                                <p>11+ years experience in TOP FMCG companies. Strong experience in multi-channel management, e.g. MT/ WS/ BNM/ EC.</p>
+                                <p>Strong experience in diversity categories’ strategy planning. Led the e-commerce P&L growth for JNJ 4X in 2 years.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-RL.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-RLmask.png') no-repeat">
+                                <p>6-year E-Commerce business and strategy experience, focusing on FMCG (Personal Care, Baby, and Cosmetic) Supply Chain Expertise.</p>
+                                <p>Was of Head of Ecommerce Key Account of Johnson & Johnson China, oversee 40 millions  USD of P&L.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-HL.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-HLmask.png') no-repeat">
+                                <p>More than 10 years of experience in public affairs in the Internet and traditional retail industries Establish a corporate public relations system during the period of the public</p>
+                                <p>comment network Senior Director of Public Affairs, Public Comment Network, Head of Public Affairs, Carrefour South China Region.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-WL.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-WLmask.png') no-repeat">
+                                <p>Brand strategy lead for clients such as Pepsi, Condé Nast, and DreamWorks. Experienced in brand development, such as the branding and design for a Pepsi product launch into China.</p>
+                                <p>Joined the top technology and strategy consulting firm Capgemini in 2014, expanding Digital and User Experience Labs.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-GH.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-GHmask.png') no-repeat">
+                                <p>10+ years experience in TOP FMCG companies. Head of ABinBev supply chainLed the Mary Kay APAC manufacturing and supply chain unit.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-QJ.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-QJmask.png') no-repeat">
+                                <p>The lead screen writer for the series "East Palace", earning the top spot across off media content platforms in Feb 2019.</p>
+                                <p>"The Subway" screenwriter, winning first prize at Shanghai "Dianyi International Writing Organization".</p>
+                                <p>Screenplay of "Tan Yutong", "Drama Award" from the Ministry of Culture, "Five-One Project Award" of the Central Culture Department.</p>
+                                <p>Dr. Director of Research, Shanghai Theatre Academy.</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                            <img src="https://images.ushopal.com/leaderInfo-PZ.jpg" alt="">
+                            <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-PZmask.png') no-repeat">
+                                <p>Senior consultant at Boston Consulting Group, with extensive project experience in business portfolio strategy, distribution strategy, and commercial due diligence.</p>
+                                <p>Strategic planning expert at Anheuser-Busch Inbev APAC, developing multi-billion CapEx investment for China and India.</p>
+                                <p>Senior product manager at Amazon.com Seattle HQ, research pain-points of platform customers and actions required.</p>
+                                <p>MBA from University of Michigan - Ross School of Business (with distinction).</p>
+                            </div>
+                        <!--</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
         <img src="" alt="" class="switcher">
         <img src="" alt="" class="switch" >
-        <ul class="control">
-            <li class="figure"> <img id="profile0"   src="" alt=""></li>
-            <li class="figure"><img  id="myImage8" src="" alt=""></li>
-            <li class="figure"><img  id="myImage9" src="" alt=""></li>
-            <li class="figure"><img  id="profile01" src="" alt=""></li>
-            <li class="figure"><img  id="profile02" src="" alt=""></li>
-            <li class="figure"><img  id="profile03" src="" alt=""></li>
-            <!--<li class="figure"><img  id="profile04" src="" alt=""></li>-->
-            <li class="figure"><img  id="profile05" src="" alt=""></li>
-            <li class="figure"><img  id="profile06" src="" alt=""></li>
-            <!--<li class="figure"><img  id="profile07" src="" alt=""></li>-->
-        </ul>
+        <!--<ul class="control">-->
+            <!--<li class="figure"> <img id="profile0"   src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="myImage8" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="myImage9" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile01" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile02" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile03" src="" alt=""></li>-->
+            <!--&lt;!&ndash;<li class="figure"><img  id="profile04" src="" alt=""></li>&ndash;&gt;-->
+            <!--<li class="figure"><img  id="profile05" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile06" src="" alt=""></li>-->
+            <!--&lt;!&ndash;<li class="figure"><img  id="profile07" src="" alt=""></li>&ndash;&gt;-->
+        <!--</ul>-->
     </section>
 
     <section id="slides">
@@ -387,7 +584,7 @@
   </div>
 
     <div class="contenst">
-        <p><span style="cursor:pointer"  class="certain">沪ICP备15003557号-2</span> &nbsp;&nbsp;&nbsp;Copyright © 2015-2019 <a href="#">ushopal.com</a>&nbsp;版权所有
+        <p> © 2019 <a href="#">ushopal.com</a> is a registered trademark. All rights reserved.
         </p>
     </div>
 
@@ -404,9 +601,41 @@
 <!--<script src="https://images.ushopal.com/js/scripts.js"></script>-->
 <!--<script src="htts://images.ushopal.com/js/prettify.js"></script>-->
 <script src="https://images.ushopal.com/js/bootstrap-min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
 </body>
 <script>
     $(function () {
+        if(window.screen.width>600) {
+            var mySwiper = new Swiper('.swiper-container', {
+                // autoplay: 1000,//可选选项，自动滑动
+                slidesPerView: 'auto',
+                slidesPerGroup: 1,
+                spaceBetween: 25,
+                // loopedSlides: 6,
+                noSwiping: true,
+                loop: true,
+                speed: 2500,
+                autoplay: {
+                    delay: 2000,
+                    // waitForTransition: false,
+                },
+            })
+            $('.swiper-slide').mouseenter(function () {
+                mySwiper.autoplay.stop();
+            })
+            $('.swiper-slide').mouseleave(function () {
+                mySwiper.autoplay.start();
+            })
+            //        鼠标经过人物介绍时
+            $('.swiper-slide').hover(function () {
+                $(this).children('.leaderInfo-text').fadeIn(600);
+                $(this).children('.leaderInfo-text').addClass('swiper-no-swiping')
+            }, function () {
+                $(this).children('.leaderInfo-text').fadeOut(600);
+                $(this).children('.leaderInfo-text').removeClass('swiper-no-swiping')
+            });
+
+        }
 
 
 //        document.documentElement.style.overflow='hidden';
@@ -414,12 +643,45 @@
 
 //                 wap端修改
         if(window.screen.width<=600){
+            //介绍领导轮播
+            var mySwiper = new Swiper('.swiper-container', {
+                // autoplay: 1000,//可选选项，自动滑动
+                loop: true,
+                // slidesPerView : 1,
+                // slidesPerGroup : 1,
+                // centeredSlides : true,
+                speed: 2500,
+                autoplay: {
+                    delay: 2000,
+                    // waitForTransition: false,
+                },
+            })
+
+            $('.swiper-slide').click(function () {
+                if($(this).children('.leaderInfo-text').css('display')=='none'){
+                    $(this).children('.leaderInfo-text').fadeIn(600);
+                    mySwiper.autoplay.stop();
+                }else{
+
+                    $(this).children('.leaderInfo-text').fadeOut(600);
+                    mySwiper.autoplay.start();
+                }
+            });
+
             document.body.style.overflow='hidden';//手机版设置这个
             var W=window.screen.width;
              var S=window.screen.width+'px';
             var  middle= Number((W-200)/2)+'px';
 //            大图区域
             console.log(window.screen.width);
+
+            $('#myImage1').load(function(){
+                var imgheight=$("#myImage1").height();
+                console.log(imgheight);
+                $('#videoPlay1').css('top',imgheight);
+            });
+
+
 
             $('#myImages').css('display', 'none');
 //            $('#myImage1').attr('src', 'img/f5/content_list.jpg')
@@ -429,7 +691,7 @@
             document.getElementById("myImage4").src="https://images.ushopal.com/p3-wap-en.jpg";
             document.getElementById("myImage5").src="https://images.ushopal.com/p5u.jpg";
             document.getElementById("myImage6").src="https://images.ushopal.com/p6u.jpg";
-            document.getElementById("myImage7").src="https://images.ushopal.com/p7u.jpg";
+            document.getElementById("myImage7").src="https://images.ushopal.com/leaderInfo-phonetitle.jpg";
 
 
 //                                中间人物渲染展示
@@ -552,7 +814,7 @@
 
             $("#container").css("width",W)
             $("#brand").css("margin-left",middle);
-            $("#how_to_start").css("margin-top",'170px');
+            // $("#how_to_start").css("margin-top",'170px');
 
 
             $('.news').css('display', 'none');
@@ -579,8 +841,8 @@
             $('#videoPlay1').css({
 //                'position': 'static',
                 'width':S,
-                "height":'260px',
-                'left':'0'
+                // "height":'260px',
+                // 'left':'0'
 
             })
 

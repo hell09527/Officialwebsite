@@ -9,6 +9,20 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
+
+    // if(document.referrer=='http://localhost:63343/official-websites/web/official-website.html'){
+    //
+    // }else{
+    //     var lang = (navigator.systemLanguage?navigator.systemLanguage:navigator.language);
+    //     //获取浏览器配置语言 #括号内是个运算，运算过后赋值给lang，当?前的内容为true时把?后的值赋给lang，为False时把:后的值赋给lang
+    //     var lang = lang.substr(0, 2);//获取lang字符串的前两位
+    //     console.log(lang);
+    //     if(lang == 'zh'){
+    //         window.location.href='http://localhost:63343/official-websites/web/secondary.html'
+    //     }else{
+    //         window.location.href='http://localhost:63343/official-websites/web/official-website.html'
+    //     };
+    // }
 </script>
 
 <head>
@@ -25,6 +39,8 @@
     <link href="https://images.ushopal.com/js/bootstrap-responsive.css" rel="stylesheet">
     <link href="https://images.ushopal.com/js/documenter_style.css" rel="stylesheet">
     <link rel="icon" href="https://images.ushopal.com/OMS.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -172,15 +188,6 @@
             position: relative;
         }
 
-
-         .video{
-             position: absolute;
-             outline: none;
-             top: 6.50%;
-             left: 25%;
-             width: 50%;
-             height: 400px;
-      }
         #videoPlay1{
 
             vertical-align: middle;
@@ -227,6 +234,106 @@
             float: left;
             width: 50%;
         }
+        @media screen and (min-width: 480px) {
+            .video{
+                position: absolute;
+                outline: none;
+                top: 6.5%;
+                left: 25%;
+                width: 50%;
+                height: 400px;
+            }
+            .leaderInfo {
+                background: url("https://images.ushopal.com/leaderInfo-bg.jpg") no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+                width: 100%;
+            }
+
+            .swiper-container {
+                width: 1200px;
+            }
+
+            .swiper-slide {
+                display: block;
+                position: relative;
+                z-index: 3;
+                width: 280px !important;
+                margin: 60px 0;
+            }
+
+            .swiper-wrapper img {
+                width: 100%;
+            }
+        }
+
+        .leaderInfo-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.6);
+            font-size: 12px;
+            bottom: 100px;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background-size: 100% 100%;
+            display: none;
+        }
+
+        .leaderInfo-text p {
+            line-height: 20px;
+            text-align: left;
+            font-weight: 200;
+            color: #fff;
+            word-break: break-all;
+            background: transparent;
+        }
+
+        .leaderInfo-text p::selection {
+            background: #fff;
+            color: #000;
+        }
+
+        .leaderInfo-text p::-moz-selection {
+            background: #fff;
+            color: #000;
+        }
+
+        .leaderInfo-text p::-webkit-selection {
+            background: #fff;
+            color: #000;
+        }
+
+        @media screen and (max-width: 480px){
+            .leaderInfo{
+                background: url("https://images.ushopal.com/leaderInfo-phonebg.jpg") no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+                width:100%;
+            }
+            .swiper-slide {
+                display: block;
+                position: relative;
+                z-index: 3;
+                /*margin: 30px auto;*/
+            }
+            .swiper-wrapper img {
+                width: 280px;
+                margin:30px auto;
+            }
+            .leaderInfo-text {
+                margin:30px auto;
+                width: 280px;
+                height:401px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0;
+            }
+            　　}
 
     </style>
 
@@ -279,7 +386,7 @@
     <div id="documenter-cover" class="post">
         <img  id="myImage1"  src="https://images.ushopal.com/c40ebf03d57de877b3ba6540c92de503_1604829989.jpg" alt="">
         <img  id="myImages"  src="https://images.ushopal.com/extra.jpg" alt="">
-        <video id="videoPlay2"  class="video" src="https://images.ushopal.com/extra.mp4"
+        <video id="videoPlay2"  class="video" src="https://h20.oss-us-west-1.aliyuncs.com/extra.mp4"
                controls
                 loop="loop" x-webkit-airplay="true" webkit-playsinline="true"
                 poster="https://images.ushopal.com/e12.jpg"
@@ -297,21 +404,114 @@
         </ul>
     </section>
     <section id="options">
-        <img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-ch-pc.jpg" alt="">
+        <!--<img id="myImage7"   src="https://images.ushopal.com/TEAM-BANNER-ch-pc.jpg" alt="">-->
+        <img id="myImage7"   src="https://images.ushopal.com/leaderInfo-zhtitle.jpg" alt="">
+        <div class="leaderInfo">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-GLzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-GLzhmask.png') no-repeat">
+                            <p>美国沃顿商学院金融与创企管理MBA</p>
+                            <p>美国强生集团大中华区数字与电子商务副总裁</p>
+                            <p>全球最大成衣集团VF亚太区副总裁</p>
+                            <p>百威英博亚太区供应链计划总监</p>
+                            <p>BCG 咨询总部全球最年轻华人项目经理</p>
+                            <p>具有极其丰富的中国及亚太区消费品和零售市场的战略规划经验，打造强生中国及VF中国电商业务</p>
+                            <p>从0到亿的生意跨越</p>
+                            <p>2013 年蓝狮Manager</p>
+                            <p>Today 杂志中国Top100 经理</p>
+                            <p>2013 年华尔街分析师报告点名中国市场商业领袖</p>
+                            <p>2012 年VF 集团全球年报重点人物</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-GYzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-GYzhmask.png') no-repeat">
+                            <p>具有十余年的全球快消品公司多渠道、多品类、和多点跨境贸易的供应链、后台和计划管理经验。</p>
+                            <p>任职强生中国期间，由于改善了供应链管理，使得强生的电商业务盈利能力在两年中提升四倍。</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-LFQzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-LFQzhmask.png') no-repeat">
+                            <p>在母婴，个人护理，化妆品等领域有丰富的战略规划和电商实战经验。</p>
+                            <p>实现中国快速消费品首例C2M电商供应链模式。在强生中国任职电商负责人期间，成功将强生电商业务提升到4000万美元。</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-LHQzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-LHQzhmask.png') no-repeat">
+                            <p>十余年互联网和传统零售业公共事务经验。</p>
+                            <p>任职大众点评网期间，建立企业公共关系体系。</p>
+                            <p>历任大众点评网公共事务高级总监，家乐福华南大区公共事务负责人。</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-LWCzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-LWCzhmask.png') no-repeat">
+                            <p>多年的品牌战略策划和数字营销经验。</p>
+                            <p>曾拥有独立的设计咨询公司，为百事，梦工场，康泰纳仕等进行过创意策划；</p>
+                            <p>参与百事可乐在中国重新上市的整体策划。</p>
+                            <p>2014 年加入全球著名的管理顾问公司—凯捷管理顾问公司，负责拓展企业数字化转型。</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-HJzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-HJzhmask.png') no-repeat">
+                            <p>历任百威英博中国区物流运作总监，事业部物流总监，</p>
+                            <p>在供应链领域有超过10年的深厚背景和世界顶级的专业能力！</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-QYzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-QYzhmask.png') no-repeat">
+                            <p>连续剧《东宫》第一编剧，2019年2月全网热度榜首；《地下铁》编剧，上海“剧翼国际写作计划”一等奖；《谭嗣同》编剧，文化部“文华剧作奖”，中宣部“五个一工程奖”。</p>
+                            <p>上海戏剧学院表导演研究博士。</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <!--<a href="javascript:;">-->
+                        <img src="https://images.ushopal.com/leaderInfo-ZPFzh.jpg" alt="">
+                        <div class="leaderInfo-text" style="background: url('https://images.ushopal.com/leaderInfo-ZPFzhmask.png') no-repeat">
+                            <p>BCG波士顿咨询资深顾问，聚焦集团战略、渠道战略、尽调。</p>
+                            <p>百威英博战略规划专家，制定中国、印度区百亿CaPex投资。</p>
+                            <p>Amazon西雅图总部高级产品经理，深度研究客户体验/需求。</p>
+                            <p>密歇根大学商学院MBA。</p>
+                        </div>
+                        <!--</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
         <img src="" alt="" class="switcher">
         <img src="" alt="" class="switch" >
-        <ul class="control">
-            <li class="figure"> <img id="profile0"   src="" alt=""></li>
-            <li class="figure"><img  id="myImage8" src="" alt=""></li>
-            <li class="figure"><img  id="myImage9" src="" alt=""></li>
-            <li class="figure"><img  id="profile01" src="" alt=""></li>
-            <li class="figure"><img  id="profile02" src="" alt=""></li>
-            <li class="figure"><img  id="profile03" src="" alt=""></li>
-            <!--<li class="figure"><img  id="profile04" src="" alt=""></li>-->
-            <li class="figure"><img  id="profile05" src="" alt=""></li>
-            <li class="figure"><img  id="profile06" src="" alt=""></li>
-            <!--<li class="figure"><img  id="profile07" src="" alt=""></li>-->
-        </ul>
+        <!--<ul class="control">-->
+            <!--<li class="figure"> <img id="profile0"   src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="myImage8" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="myImage9" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile01" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile02" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile03" src="" alt=""></li>-->
+            <!--&lt;!&ndash;<li class="figure"><img  id="profile04" src="" alt=""></li>&ndash;&gt;-->
+            <!--<li class="figure"><img  id="profile05" src="" alt=""></li>-->
+            <!--<li class="figure"><img  id="profile06" src="" alt=""></li>-->
+            <!--&lt;!&ndash;<li class="figure"><img  id="profile07" src="" alt=""></li>&ndash;&gt;-->
+        <!--</ul>-->
     </section>
     <section id="slides">
         <img  id="myImage10"  src="https://images.ushopal.com/brands-pc-ch.jpg" alt="">
@@ -379,7 +579,7 @@
         </ul>
     </div>
     <div class="contenst">
-        <p><span  style="cursor:pointer" class="certain">沪ICP备15003557号-2</span> &nbsp;&nbsp;&nbsp;Copyright © 2015-2019 <a href="#">ushopal.com</a>&nbsp;版权所有
+        <p><span  style="cursor:pointer" class="certain">沪ICP备15003557号-2</span> &nbsp;&nbsp;&nbsp;Copyright © 2019 <a href="#">ushopal.com</a>&nbsp;版权所有
         </p>
     </div>
 
@@ -396,6 +596,7 @@
 <!--<script src="https://images.ushopal.com/js/scripts.js"></script>-->
 <!--<script src="htts://images.ushopal.com/js/prettify.js"></script>-->
 <script src="https://images.ushopal.com/js/bootstrap-min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
 </body>
 <script>
     $(function () {
@@ -421,8 +622,69 @@
 //            document.documentElement.style.overflow='hidden';
             let   adaptW=  window.screen.width;
             console.log(window.screen.width);
+
+
+            if(window.screen.width>600) {
+                var mySwiper = new Swiper('.swiper-container', {
+                    // autoplay: 1000,//可选选项，自动滑动
+                    slidesPerView: 'auto',
+                    slidesPerGroup: 1,
+                    spaceBetween: 25,
+                    // loopedSlides: 6,
+                    noSwiping: true,
+                    loop: true,
+                    speed: 2500,
+                    autoplay: {
+                        delay: 2000,
+                        // waitForTransition: false,
+                    },
+                })
+                $('.swiper-slide').mouseenter(function () {
+                    mySwiper.autoplay.stop();
+                })
+                $('.swiper-slide').mouseleave(function () {
+                    mySwiper.autoplay.start();
+                })
+                //        鼠标经过人物介绍时
+                $('.swiper-slide').hover(function () {
+                    $(this).children('.leaderInfo-text').fadeIn(600);
+                    $(this).children('.leaderInfo-text').addClass('swiper-no-swiping')
+                }, function () {
+                    $(this).children('.leaderInfo-text').fadeOut(600);
+                    $(this).children('.leaderInfo-text').removeClass('swiper-no-swiping')
+                });
+
+            }
+
+
             //                 wap端修改
             if(adaptW<=600){
+                //介绍领导轮播
+                var mySwiper = new Swiper('.swiper-container', {
+                    // autoplay: 1000,//可选选项，自动滑动
+                    loop: true,
+                    // slidesPerView : 1,
+                    // slidesPerGroup : 1,
+                    // centeredSlides : true,
+                    speed: 2500,
+                    autoplay: {
+                        delay: 2000,
+                        // waitForTransition: false,
+                    },
+                })
+
+                $('.swiper-slide').click(function () {
+                    if($(this).children('.leaderInfo-text').css('display')=='none'){
+                        $(this).children('.leaderInfo-text').fadeIn(600);
+                        mySwiper.autoplay.stop();
+                    }else{
+
+                        $(this).children('.leaderInfo-text').fadeOut(600);
+                        mySwiper.autoplay.start();
+                    }
+                });
+
+
                 document.body.style.overflow='hidden';//手机版设置这个
                 var W=window.screen.width;
                 var SI=window.screen.width+'px';
@@ -432,10 +694,8 @@
                 $('#myImages').css('display', 'none');
                 $("#videoPlay2").css({
                     'width':SI,
-                    "height":'260px',
                     'left':'0',
-                    'top':'5.9%'
-
+                    'display':'block',
                 })
 
 
@@ -443,6 +703,8 @@
 
 //            大图区域
                 console.log(window.screen.width);
+
+
 //            $('#myImage1').attr('src', 'img/f5/content_list.jpg')
                 document.getElementById("myImage1").src="https://images.ushopal.com/1.jpg";
                 document.getElementById("myImage2").src="https://images.ushopal.com/how_to_start.jpg";
@@ -450,7 +712,9 @@
                 document.getElementById("myImage4").src="https://images.ushopal.com/4.jpg";
                 document.getElementById("myImage5").src="https://images.ushopal.com/5.jpg";
                 document.getElementById("myImage6").src="https://images.ushopal.com/6.jpg";
-                document.getElementById("myImage7").src="https://images.ushopal.com/7.jpg";
+                // document.getElementById("myImage7").src="https://images.ushopal.com/7.jpg";
+
+                document.getElementById("myImage7").src="https://images.ushopal.com/leaderInfo-phonezhtitle.jpg";
 
 
 
@@ -575,7 +839,7 @@
 
                 $("#container").css("width",W)
                 $("#brand").css("margin-left",middle);
-                   $("#how_to_start").css("margin-top",'200px');
+                   // $("#how_to_start").css("margin-top",'200px');
 
 
 
