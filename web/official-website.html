@@ -321,6 +321,15 @@
             background: #fff;
             color: #000;
         }
+        .swiper-button-left{
+            background-image: url('https://images.ushopal.com/icon-left.png');
+            background-size: 50% 85%;
+        }
+        .swiper-button-right{
+            background-image: url('https://images.ushopal.com/icon-right.png');
+            background-size: 50% 85%;
+        }
+
 
         @media screen and (max-width: 480px){
             .leaderInfo{
@@ -501,6 +510,8 @@
                         <!--</a>-->
                     </div>
                 </div>
+                <div class="swiper-button-prev swiper-button-left" style="outline: none"></div><!--左箭头-->
+                <div class="swiper-button-next swiper-button-right" style="outline: none"></div><!--右箭头-->
             </div>
         </div>
         <img src="" alt="" class="switcher">
@@ -552,15 +563,15 @@
     <section id="oNews" >
         <img   id="waps"  src="https://images.ushopal.com/news-pc-en.jpg" alt="">
         <ul class="news">
-            <li><a href="https://www.instagram.com/p/BvL69oVgyKy/" target="_Blank"><img src="https://images.ushopal.com/wu-pc-a.jpg" alt=""></a></li>
-            <li><a href="https://www.instagram.com/p/BvECmLig5PK/" target="_Blank"><img   src="https://images.ushopal.com/wu01-pc-a.jpg" alt=""></a></li>
-            <li><a href="http://ent.ifeng.com/a/20190308/43193988_0.shtml?from=singlemessage&isappinstalled=0" target="_Blank"><img class="norm03" src="https://images.ushopal.com/wu02-pc-a.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BwD26d4gFLb/?utm_source=ig_share_sheet&igshid=1sclu00a1dvdx" target="_Blank"><img src="https://images.ushopal.com/wu-pc-a.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BvL69oVgyKy/" target="_Blank"><img   src="https://images.ushopal.com/wu01-pc-a.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BvECmLig5PK/" target="_Blank"><img class="norm03" src="https://images.ushopal.com/wu02-pc-a.jpg" alt=""></a></li>
         </ul>
 
         <ul class="new_wap" style="display: none;">
-            <li><a href="https://www.instagram.com/p/BvL69oVgyKy/" target="_Blank"><img  src="https://images.ushopal.com/newsapp1-wap.jpg" alt=""></a></li>
-            <li><a href="https://www.instagram.com/p/BvECmLig5PK/" target="_Blank"><img   src="https://images.ushopal.com/newsapp2-wap.jpg" alt=""></a></li>
-            <li><a href="http://ent.ifeng.com/a/20190308/43193988_0.shtml?from=singlemessage&isappinstalled=0" target="_Blank"><img class="norm03" src="https://images.ushopal.com/newsapp3-wap.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BwD26d4gFLb/?utm_source=ig_share_sheet&igshid=1sclu00a1dvdx" target="_Blank"><img  src="https://images.ushopal.com/newsapp2-wap.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BvL69oVgyKy/" target="_Blank"><img   src="https://images.ushopal.com/newsapp1-wap.jpg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/p/BvECmLig5PK/" target="_Blank"><img class="norm03" src="https://images.ushopal.com/newsapp3-wap.jpg" alt=""></a></li>
             <li><a href=""><img class="norm04" src="https://images.ushopal.com/newsapp4-wap.jpg" alt=""></a></li>
         </ul>
     </section>
@@ -614,12 +625,15 @@
                 // loopedSlides: 6,
                 noSwiping: true,
                 loop: true,
-                speed: 2500,
+                speed: 1000,
                 autoplay: {
-                    delay: 2000,
+                    delay: 1000,
                     // waitForTransition: false,
                 },
             })
+            $('.swiper-button-prev').css('display','none');
+            $('.swiper-button-next').css('display','none');
+
             $('.swiper-slide').mouseenter(function () {
                 mySwiper.autoplay.stop();
             })
@@ -650,12 +664,17 @@
                 // slidesPerView : 1,
                 // slidesPerGroup : 1,
                 // centeredSlides : true,
-                speed: 2500,
+                speed: 1000,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 autoplay: {
-                    delay: 2000,
+                    delay: 1000,
                     // waitForTransition: false,
                 },
             })
+
 
             $('.swiper-slide').click(function () {
                 if($(this).children('.leaderInfo-text').css('display')=='none'){
