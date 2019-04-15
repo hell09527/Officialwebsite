@@ -10,19 +10,15 @@
         s.parentNode.insertBefore(hm, s);
     })();
 
-    // if(document.referrer=='http://localhost:63343/official-websites/web/official-website.html'){
-    //
-    // }else{
-    //     var lang = (navigator.systemLanguage?navigator.systemLanguage:navigator.language);
-    //     //获取浏览器配置语言 #括号内是个运算，运算过后赋值给lang，当?前的内容为true时把?后的值赋给lang，为False时把:后的值赋给lang
-    //     var lang = lang.substr(0, 2);//获取lang字符串的前两位
-    //     console.log(lang);
-    //     if(lang == 'zh'){
-    //         window.location.href='http://localhost:63343/official-websites/web/secondary.html'
-    //     }else{
-    //         window.location.href='http://localhost:63343/official-websites/web/official-website.html'
-    //     };
+    console.log(document.referrer);
+    // var lang = (navigator.systemLanguage ? navigator.systemLanguage : navigator.language);
+    // //获取浏览器配置语言 #括号内是个运算，运算过后赋值给lang，当?前的内容为true时把?后的值赋给lang，为False时把:后的值赋给lang
+    // var lang = lang.substr(0, 2);//获取lang字符串的前两位
+    // console.log(lang);
+    // if (lang == 'en') {
+    //     window.location.href = 'https://us.ushopal.com'
     // }
+
 </script>
 
 <head>
@@ -375,9 +371,9 @@
                     <li><a href="#banner_timer" title="Banner Timer">联 系 我 们 <div class="lines"></div></a></li>
 
                     <li class="translate" >
-                        <a href="#"><span   onclick="window.location.href=' official-website.html'" >EN
+                        <a href="#"><span   onclick="window.location.href='index_en.html'" >EN
                             <!--<span onclick="window.location.href='Japanese.html'">/日本語</span>-->
-                        </span> <span  style="color:red;" onclick="window.location.href='secondary.html'">/ CN</span> </a>
+                        </span> <span  style="color:red;" onclick="window.location.href='index_zh.html'">/ CN</span> </a>
                     </li>
 
                 </ul>
@@ -394,12 +390,12 @@
     <div id="documenter-cover" class="post">
         <img  id="myImage1"  src="https://images.ushopal.com/c40ebf03d57de877b3ba6540c92de503_1604829989.jpg" alt="">
         <img  id="myImages"  src="https://images.ushopal.com/extra.jpg" alt="">
-        <video id="videoPlay2"  class="video" src="https://h20.oss-us-west-1.aliyuncs.com/extra.mp4"
-               controls
-                loop="loop" x-webkit-airplay="true" webkit-playsinline="true"
-                poster="https://images.ushopal.com/e12.jpg"
+        <!--<video id="videoPlay2"  class="video" src="https://images.ushopal.com/extra.mp4"-->
+               <!--controls-->
+                <!--loop="loop" x-webkit-airplay="true" webkit-playsinline="true"-->
+                <!--poster="https://images.ushopal.com/e12.jpg"-->
 
-        >
+        <!--&gt;-->
 
     </div>
     <section id="how_to_start">
@@ -609,7 +605,31 @@
 <script src="assets/js/swiper.min.js"></script>
 </body>
 <script>
+
+
     $(function () {
+        var url = window.location.host;
+        console.log(url);
+
+        if(url=='www.ushopal.com'||url=='h19.ushopal.com'){
+            $('#documenter-cover').append(`
+            <video id="videoPlay2"  class="video" src="https://images.ushopal.com/extra.mp4"
+               controls
+               loop="loop" x-webkit-airplay="true" webkit-playsinline="true"
+               poster="https://images.ushopal.com/e12.jpg"
+
+        >
+            `)
+        }else if(url=='us.ushopal.com'||url=='h20.ushopal.com'){
+            $('#documenter-cover').append(`
+            <video id="videoPlay2"  class="video" src="https://h20.oss-us-west-1.aliyuncs.com/extra.mp4"
+               controls
+               loop="loop" x-webkit-airplay="true" webkit-playsinline="true"
+               poster="https://images.ushopal.com/e12.jpg"
+
+        >
+            `)
+        }
 
         //    var _PageHeight = document.documentElement.clientHeight,
         //            _PageWidth = document.documentElement.clientWidth;
@@ -628,6 +648,9 @@
         //                loadingMask.parentNode.removeChild(loadingMask);
         //            }
         //        }
+
+
+
         window.onload = function(){
 //            document.documentElement.style.overflow='hidden';
             let   adaptW=  window.screen.width;
@@ -645,7 +668,7 @@
                     loop: true,
                     speed: 1000,
                     autoplay: {
-                        delay: 1000,
+                        delay: 1300,
                         // waitForTransition: false,
                     },
                 })
@@ -684,7 +707,7 @@
                         prevEl: '.swiper-button-prev',
                     },
                     autoplay: {
-                        delay: 1000,
+                        delay: 1300,
                         // waitForTransition: false,
                     },
                 })
